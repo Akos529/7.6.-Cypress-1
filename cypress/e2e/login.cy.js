@@ -3,7 +3,6 @@ beforeEach(() => {
 });
 describe("login page", () => {
   it("login user", () => {
-    Cypress.env("phoneViewportHeight");
     cy.login("test@test.com", "test");
     cy.contains("Добро пожаловать test@test.com").should("be.visible");
   });
@@ -25,20 +24,14 @@ describe("favorites", () => {
     cy.login("test@test.com", "test");
   });
   it("add new book without adding to favorites", () => {
-    cy.contains("Add new").click();
-    cy.get("#title").type("Книга 1");
-    cy.contains("Submit").click();
-    cy.contains("Книга 1").should("be.visible");
+    cy.addBook("Книга3");
     cy.contains("Favorite").click();
     cy.get(".btn > a").should("be.visible");
   });
   it("add new book to favorites", () => {
-    cy.contains("Add new").click();
-    cy.get("#title").type("Книга 1");
-    cy.get("#favorite").click();
-    cy.contains("Submit").click();
+    cy.addFavouriteBook("Книга5");
     cy.contains("Favorite").click();
-    cy.contains("Книга 1").should("be.visible");
+    cy.contains("Книга5").should("be.visible");
   });
   it("delete from favorites", () => {
     cy.contains("Favorite").click();

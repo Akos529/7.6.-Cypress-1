@@ -33,3 +33,16 @@ Cypress.Commands.add("login", (email, password) => {
   }
   cy.contains("Submit").click();
 });
+
+Cypress.Commands.add("addBook", (title) => {
+  cy.contains("Add new").click();
+  cy.get("#title").type(title);
+  cy.contains("Submit").click();
+});
+
+Cypress.Commands.add("addFavouriteBook", (title) => {
+  cy.contains("Add new").click();
+  cy.get("#title").type(title);
+  cy.get("#favorite").click();
+  cy.contains("Submit").click();
+});
