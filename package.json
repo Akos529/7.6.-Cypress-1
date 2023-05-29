@@ -7,10 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:run:chrome:headed": "cypress run --headed --browser chrome --config-file",
-    "cy:run:chrome": "cypress run --browser chrome --config-file",
-    "cy:run:firefox:headed": "cypress run --headed --browser firefox --config-file",
-    "cy:run:firefox": "cypress run --browser firefox --config-file"
+    "cy:run:chrome:headed:laptop": "cypress run --headed --browser chrome --config-file cypressLaptop.config.js",
+    "cy:run:chrome:laptop": "cypress run --browser chrome --config-file сypressLaptop.config.js",
+    "cy:run:chrome:headed:phone": "cypress run --headed --browser chrome --config-file cypressPhone.config.js",
+    "cy:run:chrome:phone": "cypress run --browser chrome --config-file сypressPhone.config.js",
+    "cy:run:firefox:headed:laptop": "cypress run --headed --browser firefox --config-file сypressLaptop.config.js",
+    "cy:run:firefox:laptop": "cypress run --browser firefox --config-file сypressLaptop.config.js",
+    "cy:run:firefox:headed:phone": "cypress run --headed --browser firefox --config-file сypressPhone.config.js",
+    "cy:run:firefox:phone": "cypress run --browser firefox --config-file сypressPhone.config.js"
   },
   "author": "",
   "license": "ISC",
